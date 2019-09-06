@@ -1,9 +1,9 @@
 <?php
 /*
- * Plugin Name: A WP Simple Chat
+ * Plugin Name: WP Simple Chat
  * Plugin URI:  https://www.groundhogg.io/wp-simple-chat?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Description: A simple way to include the Facebook Chat Plugin on your website.
- * Version: 2.0.9.8
+ * Version: 1.0
  * Author: Groundhogg Inc.
  * Author URI: https://www.groundhogg.io/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
  * Text Domain: groundhogg
@@ -22,8 +22,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'SIMPLE_CHAT_VERSION', '2.0.9.8' );
-define( 'SIMPLE_CHAT_PREVIOUS_STABLE_VERSION', '2.0.9.7' );
+define( 'SIMPLE_CHAT_VERSION', '1.0' );
+define( 'SIMPLE_CHAT_PREVIOUS_STABLE_VERSION', '1.0' );
 
 define( 'SIMPLE_CHAT__FILE__', __FILE__ );
 define( 'SIMPLE_CHAT_PLUGIN_BASE', plugin_basename( SIMPLE_CHAT__FILE__ ) );
