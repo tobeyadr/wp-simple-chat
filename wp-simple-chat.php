@@ -1,20 +1,20 @@
 <?php
 /*
  * Plugin Name: WP Simple Chat
- * Plugin URI:  https://www.groundhogg.io/wp-simple-chat?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
+ * Plugin URI:  https://www.groundhogg.io/wp-simple-chat/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Description: A simple way to include the Facebook Chat Plugin on your website.
  * Version: 1.0
  * Author: Groundhogg Inc.
  * Author URI: https://www.groundhogg.io/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Text Domain: groundhogg
+ * Text Domain: wp-simple-chat
  * Domain Path: /languages
  *
- * Groundhogg is free software: you can redistribute it and/or modify
+ * WP Simple Chat is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
  *
- * Groundhogg is distributed in the hope that it will be useful,
+ * WP Simple Chat is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
@@ -47,18 +47,18 @@ if ( ! version_compare( PHP_VERSION, '5.6', '>=' ) ) {
 }
 
 /**
- * Groundhogg loaded.
+ * WP Simple Chat loaded.
  *
- * Fires when Groundhogg was fully loaded and instantiated.
+ * Fires when WP Simple Chat was fully loaded and instantiated.
  *
  * @since 1.0.0
  */
 do_action( 'simple_chat/loaded' );
 
 /**
- * Load Groundhogg textdomain.
+ * Load WP Simple Chat textdomain.
  *
- * Load gettext translate for Groundhogg text domain.
+ * Load gettext translate for WP Simple Chat text domain.
  *
  * @since 1.0.0
  *
@@ -69,7 +69,7 @@ function simple_chat_load_plugin_textdomain() {
 }
 
 /**
- * Groundhogg admin notice for minimum PHP version.
+ * WP Simple Chat admin notice for minimum PHP version.
  *
  * Warning when the site doesn't have the minimum required PHP version.
  *
@@ -85,7 +85,7 @@ function simple_chat_fail_php_version() {
 }
 
 /**
- * Groundhogg admin notice for minimum WordPress version.
+ * WP Simple Chat admin notice for minimum WordPress version.
  *
  * Warning when the site doesn't have the minimum required WordPress version.
  *

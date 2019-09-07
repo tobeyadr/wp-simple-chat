@@ -7,9 +7,9 @@ use SimpleChat\Admin\Settings;
 if ( ! defined( 'ABSPATH' ) ) {exit;}
 
 /**
- * Groundhogg plugin.
+ * WP Simple Chat plugin.
  *
- * The main plugin handler class is responsible for initializing Groundhogg. The
+ * The main plugin handler class is responsible for initializing WP Simple Chat. The
  * class registers and all the components required to run the plugin.
  *
  * @since 2.0
@@ -85,8 +85,8 @@ class Plugin {
     /**
      * Init.
      *
-     * Initialize Groundhogg Plugin. Register Groundhogg support for all the
-     * supported post types and initialize Groundhogg components.
+     * Initialize WP Simple Chat Plugin. Register WP Simple Chat support for all the
+     * supported post types and initialize WP Simple Chat components.
      *
      * @since 1.0.0
      * @access public
@@ -97,9 +97,9 @@ class Plugin {
         $this->init_components();
 
         /**
-         * Groundhogg init.
+         * WP Simple Chat init.
          *
-         * Fires on Groundhogg init, after Groundhogg has finished loading but
+         * Fires on WP Simple Chat init, after WP Simple Chat has finished loading but
          * before any headers are sent.
          *
          * @since 1.0.0
@@ -110,8 +110,8 @@ class Plugin {
     /**
      * Init components.
      *
-     * Initialize Groundhogg components. Register actions, run setting manager,
-     * initialize all the components that run groundhogg, and if in admin page
+     * Initialize WP Simple Chat components. Register actions, run setting manager,
+     * initialize all the components that run WP Simple Chat, and if in admin page
      * initialize admin components.
      *
      * @since 1.0.0
@@ -131,7 +131,7 @@ class Plugin {
     /**
      * Register autoloader.
      *
-     * Groundhogg autoloader loads all the classes needed to run the plugin.
+     * WP Simple Chat autoloader loads all the classes needed to run the plugin.
      *
      * @since 1.6.0
      * @access private
@@ -152,7 +152,7 @@ class Plugin {
     /**
      * Plugin constructor.
      *
-     * Initializing Groundhogg plugin.
+     * Initializing WP Simple Chat plugin.
      *
      * @since 1.0.0
      * @access private

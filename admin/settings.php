@@ -100,6 +100,12 @@ class Settings extends Admin_Page
                         'label' => __('Logged In Greeting', 'wp-simple-chat'),
                         'desc' => __('The greeting message your visitors will see if they are logged into WordPress.', 'wp-simple-chat'),
                     ],
+	                [
+		                'type' => 'color_picker',
+		                'option' => 'theme_color',
+		                'label' => __('Chat Color', 'wp-simple-chat'),
+		                'desc' => __('The color of the Chat Bubble.', 'wp-simple-chat'),
+	                ],
                 ],
             ]
         ];
