@@ -78,6 +78,7 @@ class Chat
         $atts = [
             'class'         => 'fb-customerchat',
             'attribution'   => 'setup_tool',
+            'page_id'       => $business_id,
             'logged_in_greeting'   => $greeting,
             'logged_out_greeting'  => $greeting,
             'theme_color'   => $theme_color,
