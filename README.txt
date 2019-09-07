@@ -1,4 +1,4 @@
-=== WP Simple Chat - Facebook chat for WordPRess ===
+=== WP Simple Chat ===
 Contributors: trainingbusinesspros, groundhogg
 Tags: chat, facebook, facebook chat
 Donate link: https://wpsimplechat.com

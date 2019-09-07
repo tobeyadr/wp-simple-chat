@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: WP Simple Chat - Facebook Chat for WordPress
+ * Plugin Name: WP Simple Chat
  * Plugin URI:  https://wpsimplechat.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Description: A simple way to include the Facebook Chat Plugin on your website.
  * Version: 1.0
