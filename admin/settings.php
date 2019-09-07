@@ -13,53 +13,43 @@ use function SimpleChat\simchat_option_name;
 class Settings extends Admin_Page
 {
 
-    protected function get_parent_slug()
-    {
-        return 'options-general.php';
-    }
+    ### Unused Functions ###
 
-    protected function add_ajax_actions()
-    {
-        // TODO: Implement add_ajax_actions() method.
-    }
+	protected function add_ajax_actions() {}
 
-    protected function add_additional_actions()
-    {
-        // TODO: Implement add_additional_actions() method.
-    }
+	protected function add_additional_actions() {}
 
-    public function get_title_actions()
+	public function get_item_type(){}
+
+	public function scripts(){}
+
+	public function load_page(){}
+
+	### Used Functions ###
+
+	public function get_title_actions()
     {
         return [];
     }
 
-    public function get_slug()
+	protected function get_parent_slug()
+	{
+		return 'options-general.php';
+	}
+
+	public function get_slug()
     {
         return 'wp-simple-chat';
     }
 
-    public function get_name()
+	public function get_name()
     {
         return "WP Simple Chat";
     }
 
-    public function get_cap()
+	public function get_cap()
     {
         return 'manage_options';
-    }
-
-    public function get_item_type()
-    {
-    }
-
-    public function scripts()
-    {
-        // TODO: Implement scripts() method.
-    }
-
-    public function load_page()
-    {
-        // TODO: Implement load_page() method.
     }
 
     /**

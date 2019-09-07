@@ -1,11 +1,11 @@
 <?php
 /*
- * Plugin Name: WP Simple Chat
- * Plugin URI:  https://www.groundhogg.io/wp-simple-chat/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
+ * Plugin Name: WP Simple Chat - Facebook Chat for WordPress
+ * Plugin URI:  https://wpsimplechat.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Description: A simple way to include the Facebook Chat Plugin on your website.
  * Version: 1.0
  * Author: Groundhogg Inc.
- * Author URI: https://www.groundhogg.io/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
+ * Author URI: https://wpsimplechat.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
  * Text Domain: wp-simple-chat
  * Domain Path: /languages
  *
