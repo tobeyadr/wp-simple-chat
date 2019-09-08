@@ -146,7 +146,6 @@ class Settings extends Admin_Page {
 							break;
 					}
 
-
 					html()->start_row();
 					html()->th( $setting['label'] );
 					html()->td( [
