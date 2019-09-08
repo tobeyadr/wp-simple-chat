@@ -16,6 +16,17 @@ function html() {
 global $SIMPLE_CHAT_OPTIONS;
 $SIMPLE_CHAT_OPTIONS = [];
 
+function get_simchat_options()
+{
+	global $SIMPLE_CHAT_OPTIONS;
+
+	if ( empty( $SIMPLE_CHAT_OPTIONS ) ){
+		$SIMPLE_CHAT_OPTIONS = get_option( 'wp_simple_chat_options', [] );
+	}
+
+	return $SIMPLE_CHAT_OPTIONS;
+}
+
 /**
  * Get a simple chat option
  *
@@ -25,13 +36,7 @@ $SIMPLE_CHAT_OPTIONS = [];
  */
 function get_simchat_option( $option_name='', $default=false )
 {
-    global $SIMPLE_CHAT_OPTIONS;
-
-    if ( empty( $SIMPLE_CHAT_OPTIONS ) ){
-        $SIMPLE_CHAT_OPTIONS = get_option( 'wp_simple_chat_options', [] );
-    }
-
-    return get_array_var( $SIMPLE_CHAT_OPTIONS, $option_name, $default );
+    return get_array_var( get_simchat_options(), $option_name, $default );
 }
 
 /**
