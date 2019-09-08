@@ -41,8 +41,8 @@ We currently do not provide any premium version of this tool, we just hope that 
 
 == Frequently Asked Questions ==
 
-= Does Groundhogg need any additional marketing software like MailChimp? =
-No, Groundhogg is a completely standalone, lightweight marketing system designed to keep you in the black, even when it comes to your monthly software bill.
+= Does WP Simple Chat require any paid chat service? =
+No, WP Simple Chat uses Facebook's Business Page Chat plugin which is free to use as long as you have a facebook business page.
 
 == Changelog ==
 
