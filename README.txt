@@ -23,8 +23,6 @@ This plugin has a direct connection to Facebook and doesn't require you to sign 
 
 We currently do not provide any premium version of this tool, we just hope that you find it helpful.
 
-== Screenshots ==
-
 == Installation ==
 = Plugin Repo =
 
@@ -45,6 +43,10 @@ We currently do not provide any premium version of this tool, we just hope that 
 No, WP Simple Chat uses Facebook's Business Page Chat plugin which is free to use as long as you have a facebook business page.
 
 == Changelog ==
+
+= 1.1 =
+* ADDED additional display settings for improved user experience.
+* ADDED Groundhogg replacements support for the greeting message.
 
 = 1.0 =
 * Initial Release
