@@ -3,6 +3,7 @@
 namespace SimpleChat;
 
 use function Groundhogg\do_replacements;
+use function Groundhogg\get_contactdata;
 
 class Chat
 {
@@ -145,7 +146,7 @@ class Chat
         }
 
         // Override with the Groundhogg personalized greeting
-        if ( defined( 'GROUNDHOGG_VERSION' ) ){
+        if ( defined( 'GROUNDHOGG_VERSION' ) && function_exists( '\Groundhogg\get_contactdata' ) && get_contactdata() ){
             $greeting = get_simchat_option( 'groundhogg_greeting', $greeting );
             $greeting_context = 'groundhogg';
         }
