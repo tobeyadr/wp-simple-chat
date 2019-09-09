@@ -2,8 +2,15 @@
 
 namespace SimpleChat;
 
+use function Groundhogg\do_replacements;
+
 class Chat
 {
+
+    /**
+     * @var \Browser
+     */
+    protected $browser;
 
 	/**
 	 * Chat constructor.
@@ -11,7 +18,104 @@ class Chat
     public function __construct()
     {
         // insert after opening body tag
+        add_action( 'wp_body_open', [ $this, 'setup_browser' ], 1 );
         add_action( 'wp_body_open', [ $this, 'render' ] );
+
+        add_filter( 'simple_chat/chat/show_chat', [ $this, 'hide_chat_if_mobile' ] );
+        add_filter( 'simple_chat/chat/show_chat', [ $this, 'hide_chat_if_logged_in' ] );
+
+        add_filter( 'simple_chat/chat/show_greeting', [ $this, 'greeting_is_disabled' ] );
+        add_filter( 'simple_chat/chat/show_greeting', [ $this, 'hide_greeting_if_mobile' ] );
+        add_filter( 'simple_chat/chat/show_greeting', [ $this, 'hide_greeting_if_logged_in' ] );
+
+        /**
+         * Groundhogg is installed.
+         */
+        if ( defined( 'GROUNDHOGG_VERSION' ) ){
+            add_filter( 'simple_chat/chat/greeting', [ $this, 'do_groundhogg_replacements' ], 99 ) ;
+        }
+    }
+
+    /**
+     * Perform replacements on the greeting
+     *
+     * @param $greeting
+     * @return string
+     */
+    public function do_groundhogg_replacements( $greeting )
+    {
+        if ( ! function_exists( '\Groundhogg\do_replacements' ) ){
+            return $greeting;
+        }
+
+        return do_replacements( $greeting );
+    }
+
+    /**
+     * Setup the browser object
+     */
+    public function setup_browser()
+    {
+        if ( ! class_exists( 'Browser' ) ){
+            include dirname( __FILE__ ) . '/core/includes/browser.php';
+        }
+
+        $this->browser = new \Browser();
+    }
+
+    /**
+     * Hide the chat if the user is logged in
+     *
+     * @param $enabled
+     * @return bool
+     */
+    public function hide_chat_if_logged_in( $enabled )
+    {
+        return get_simchat_option( 'hide_when_logged_in' ) && is_user_logged_in() ? false : $enabled;
+    }
+
+    /**
+     * Hide the chat if the browser is mobile
+     *
+     * @param $enabled
+     * @return bool
+     */
+    public function hide_chat_if_mobile( $enabled )
+    {
+        return get_simchat_option( 'hide_on_mobile' ) && $this->browser->isMobile() ? false : $enabled;
+    }
+
+    /**
+     * Hide the chat if the user is logged in
+     *
+     * @param $enabled
+     * @return bool
+     */
+    public function greeting_is_disabled( $enabled )
+    {
+        return get_simchat_option( 'hide_greeting' ) ? false : $enabled ;
+    }
+
+    /**
+     * Hide the greeting if the browser is mobile
+     *
+     * @param $enabled
+     * @return bool
+     */
+    public function hide_greeting_if_mobile( $enabled )
+    {
+        return get_simchat_option( 'hide_greeting_on_mobile' ) && $this->browser->isMobile() ? false : $enabled;
+    }
+
+    /**
+     * Hide the greeting if the browser is mobile
+     *
+     * @param $enabled
+     * @return bool
+     */
+    public function hide_greeting_if_logged_in( $enabled )
+    {
+        return get_simchat_option( 'hide_greeting_when_logged_in' ) && is_user_logged_in() ? false : $enabled;
     }
 
 	/**
@@ -22,6 +126,8 @@ class Chat
         // Get the business ID and the Enabled option
 	    $enabled = get_simchat_option( 'enable_chat' );
 	    $business_id = get_simchat_option( 'business_id' );
+
+	    $enabled = apply_filters( 'simple_chat/chat/show_chat', $enabled );
 
 	    // If neither are set then do not show the chat
         if ( ! $enabled || ! $business_id ){
@@ -36,6 +142,12 @@ class Chat
         if ( is_user_logged_in() ){
             $greeting = get_simchat_option( 'logged_in_greeting', $greeting );
             $greeting_context = 'logged_in';
+        }
+
+        // Override with the Groundhogg personalized greeting
+        if ( defined( 'GROUNDHOGG_VERSION' ) ){
+            $greeting = get_simchat_option( 'groundhogg_greeting', $greeting );
+            $greeting_context = 'groundhogg';
         }
 
         // Check to see if the current post has an override for the greeting
@@ -53,6 +165,8 @@ class Chat
 
         // Allow other plugins to modify the theme color
 	    $theme_color = apply_filters( 'simple_chat/chat/theme_color', get_simchat_option( 'theme_color' ) );
+	    $show_greeting = apply_filters( 'simple_chat/chat/show_greeting', true );
+	    $show_greeting = $show_greeting ? 'show' : 'hide';
 
 	    ?>
         <!-- Load Facebook SDK for JavaScript -->
@@ -81,6 +195,7 @@ class Chat
             'page_id'       => $business_id,
             'logged_in_greeting'   => $greeting,
             'logged_out_greeting'  => $greeting,
+            'greeting_dialog_display' => $show_greeting,
             'theme_color'   => $theme_color,
         ];
 
