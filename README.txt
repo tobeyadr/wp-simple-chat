@@ -44,6 +44,10 @@ No, WP Simple Chat uses Facebook's Business Page Chat plugin which is free to us
 
 == Changelog ==
 
+= 1.1.1 =
+* FIXED make sure Contact is present before doing GH replacements.
+* FIXED hide when logged in not working.
+
 = 1.1 =
 * ADDED additional display settings for improved user experience.
 * ADDED Groundhogg replacements support for the greeting message.
