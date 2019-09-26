@@ -175,6 +175,7 @@ class Plugin {
     private function includes()
     {
         include dirname( __FILE__ ) . '/functions.php';
+        include dirname( __FILE__ ) . '/compatibility.php';
     }
 }
 

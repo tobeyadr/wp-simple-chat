@@ -15,28 +15,15 @@ class Settings extends Admin_Page
 
     ### Unused Functions ###
 
-    protected function add_ajax_actions()
-    {
-    }
+    protected function add_ajax_actions(){}
 
-    protected function add_additional_actions()
-    {
-//        add_action('admin_init', function () {
-//            wp_send_json( $this->get_settings() );
-//        });
-    }
+    protected function add_additional_actions(){}
 
-    public function get_item_type()
-    {
-    }
+    public function get_item_type(){}
 
-    public function scripts()
-    {
-    }
+    public function scripts(){}
 
-    public function load_page()
-    {
-    }
+    public function load_page(){}
 
     ### Used Functions ###
 

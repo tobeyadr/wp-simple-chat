@@ -44,6 +44,11 @@ No, WP Simple Chat uses Facebook's Business Page Chat plugin which is free to us
 
 == Changelog ==
 
+= 1.1.2 =
+* ADDED Option to disable chat on posts.
+* ADDED Compat for themes without wp_body_open.
+* TWEAKED css and UI in post metabox
+
 = 1.1.1 =
 * FIXED make sure Contact is present before doing GH replacements.
 * FIXED hide when logged in not working.

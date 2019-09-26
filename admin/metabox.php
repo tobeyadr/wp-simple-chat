@@ -23,25 +23,37 @@ class Metabox extends \ExtendedCore\Admin\Metabox
         $post_id = $post->ID;
 
         $greeting = get_post_meta( $post_id, 'wp_simple_chat_greeting', true );
+        $disabled = get_post_meta( $post_id, 'wp_simple_chat_disabled', true );
 
-        echo html()->e('div', [
-            'class' => 'components-base-control'
-        ], html()->e('div', [
-            'class' => 'components-base-control__field'
+        echo html()->e('p', [
         ],
             [
                 html()->e('label', [
-                    'class' => 'components-base-control__label'
+                    'for' => 'wp_simple_chat_greeting',
+                    'style' => [ 'display' => 'block', 'margin-bottom' => '4px' ]
                 ],
                     __('Custom chat greeting:', 'wp-simple-chat')
                 ),
                 html()->input([
                     'name' => 'wp_simple_chat_greeting',
+                    'id' => 'wp_simple_chat_greeting',
                     'value' => $greeting,
-                    'class' => 'components-text-control__input'
+                    'style' => [ 'max-width' => '100%' ]
                 ])
             ]
-        )
+        );
+
+        $type = get_post_type( $post_id );
+
+        echo html()->e('p', [],
+            [
+                html()->checkbox([
+                    'name' => 'wp_simple_chat_disabled',
+                    'value' => 'enabled',
+                    'checked' => boolval( $disabled ),
+                    'label' => sprintf( __( 'Disable on this %s.', 'groundhogg' ), $type )
+                ])
+            ]
         );
     }
 
@@ -51,12 +63,20 @@ class Metabox extends \ExtendedCore\Admin\Metabox
      */
     protected function save($post_id)
     {
-        if ( $greeting = get_request_var( 'wp_simple_chat_greeting' ) ){
-            $greeting = sanitize_text_field( $greeting );
-            update_post_meta( $post_id, 'wp_simple_chat_greeting', $greeting );
-            return;
-        }
+        $meta_to_save = [
+            'wp_simple_chat_greeting',
+            'wp_simple_chat_disabled'
+        ];
 
-        delete_post_meta( $post_id, 'wp_simple_chat_greeting' );
+        foreach ( $meta_to_save as $meta_key ){
+            $meta = sanitize_text_field( get_request_var( $meta_key ) );
+
+            if ( $meta ){
+                update_post_meta( $post_id, $meta_key, $meta );
+                continue;
+            }
+
+            delete_post_meta( $post_id, $meta_key );
+        }
     }
 }

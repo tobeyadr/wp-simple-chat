@@ -22,8 +22,13 @@ class Chat
         add_action( 'wp_body_open', [ $this, 'setup_browser' ], 1 );
         add_action( 'wp_body_open', [ $this, 'render' ] );
 
+        // Fallback inserts after footer.
+        add_action( 'sim_chat_body_close', [ $this, 'setup_browser' ], 1 );
+        add_action( 'sim_chat_body_close', [ $this, 'render' ] );
+
         add_filter( 'simple_chat/chat/show_chat', [ $this, 'hide_chat_if_mobile' ] );
         add_filter( 'simple_chat/chat/show_chat', [ $this, 'hide_chat_if_logged_in' ] );
+        add_filter( 'simple_chat/chat/show_chat', [ $this, 'hide_chat_if_disabled_on_page' ] );
 
         add_filter( 'simple_chat/chat/show_greeting', [ $this, 'greeting_is_disabled' ] );
         add_filter( 'simple_chat/chat/show_greeting', [ $this, 'hide_greeting_if_mobile' ] );
@@ -73,6 +78,22 @@ class Chat
     public function hide_chat_if_logged_in( $enabled )
     {
         return get_simchat_option( 'hide_when_logged_in' ) && is_user_logged_in() ? false : $enabled;
+    }
+
+    /**
+     * Hide the chat if the user is logged in
+     *
+     * @param $enabled
+     * @return bool
+     */
+    public function hide_chat_if_disabled_on_page( $enabled )
+    {
+        if ( is_singular() && get_the_ID() ){
+            $disabled = boolval( get_post_meta( get_the_ID(), 'wp_simple_chat_disabled', true ) );
+            return ! $disabled;
+        }
+
+        return $enabled;
     }
 
     /**
