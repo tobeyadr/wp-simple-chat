@@ -3,7 +3,7 @@
  * Plugin Name: WP Simple Chat
  * Plugin URI:  https://wpsimplechat.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Description: A simple way to include the Facebook Chat Plugin on your website.
- * Version: 1.1.2
+ * Version: 1.1.3
  * Author: Groundhogg Inc.
  * Author URI: https://wpsimplechat.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
  * Text Domain: wp-simple-chat
@@ -22,7 +22,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'SIMPLE_CHAT_VERSION', '1.1.2' );
+define( 'SIMPLE_CHAT_VERSION', '1.1.3' );
 define( 'SIMPLE_CHAT_PREVIOUS_STABLE_VERSION', '1.1.1' );
 
 define( 'SIMPLE_CHAT__FILE__', __FILE__ );
