@@ -15,7 +15,7 @@ function wp_body_open_compat(){
 }
 
 // No wp_body_open compat
-add_action( 'wp_footer', __NAMESPACE__ . '\warning_no_wp_body_open' );
+add_action( 'wp_footer', __NAMESPACE__ . '\no_wp_body_open' );
 
 /**
  * Insert in footer before closing body tag. Not ideal but it will do.
