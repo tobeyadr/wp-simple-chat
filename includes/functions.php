@@ -10,17 +10,16 @@ use function ExtendedCore\get_array_var;
  * @return HTML
  */
 function html() {
-    return Plugin::$instance->html;
+	return Plugin::$instance->html;
 }
 
 global $SIMPLE_CHAT_OPTIONS;
 $SIMPLE_CHAT_OPTIONS = [];
 
-function get_simchat_options()
-{
+function get_simchat_options() {
 	global $SIMPLE_CHAT_OPTIONS;
 
-	if ( empty( $SIMPLE_CHAT_OPTIONS ) ){
+	if ( empty( $SIMPLE_CHAT_OPTIONS ) ) {
 		$SIMPLE_CHAT_OPTIONS = get_option( 'wp_simple_chat_options', [] );
 	}
 
@@ -32,11 +31,11 @@ function get_simchat_options()
  *
  * @param string $option_name
  * @param bool $default
+ *
  * @return mixed
  */
-function get_simchat_option( $option_name='', $default=false )
-{
-    return get_array_var( get_simchat_options(), $option_name, $default );
+function get_simchat_option( $option_name = '', $default = false ) {
+	return get_array_var( get_simchat_options(), $option_name, $default );
 }
 
 /**
@@ -44,19 +43,19 @@ function get_simchat_option( $option_name='', $default=false )
  *
  * @param string $option_name
  * @param string $value
+ *
  * @return bool
  */
-function update_simchat_option( $option_name='', $value='' )
-{
-    global $SIMPLE_CHAT_OPTIONS;
+function update_simchat_option( $option_name = '', $value = '' ) {
+	global $SIMPLE_CHAT_OPTIONS;
 
-    if ( empty( $SIMPLE_CHAT_OPTIONS ) ){
-        $SIMPLE_CHAT_OPTIONS = get_option( 'wp_simple_chat_options' );
-    }
+	if ( empty( $SIMPLE_CHAT_OPTIONS ) ) {
+		$SIMPLE_CHAT_OPTIONS = get_option( 'wp_simple_chat_options' );
+	}
 
-    $SIMPLE_CHAT_OPTIONS[ $option_name ] = $value;
+	$SIMPLE_CHAT_OPTIONS[ $option_name ] = $value;
 
-    return update_option( 'wp_simple_chat_options', $SIMPLE_CHAT_OPTIONS );
+	return update_option( 'wp_simple_chat_options', $SIMPLE_CHAT_OPTIONS );
 }
 
 /**
@@ -64,36 +63,37 @@ function update_simchat_option( $option_name='', $value='' )
  *
  * @param string $option_name
  * @param string $value
+ *
  * @return bool
  */
-function add_simchat_option( $option_name='', $value='' ){
-    return update_simchat_option( $option_name, $value );
+function add_simchat_option( $option_name = '', $value = '' ) {
+	return update_simchat_option( $option_name, $value );
 }
 
 /**
  * @param string $option_name
+ *
  * @return bool
  */
-function delete_simchat_option( $option_name='' )
-{
-    global $SIMPLE_CHAT_OPTIONS;
+function delete_simchat_option( $option_name = '' ) {
+	global $SIMPLE_CHAT_OPTIONS;
 
-    if ( empty( $SIMPLE_CHAT_OPTIONS ) ){
-        $SIMPLE_CHAT_OPTIONS = get_option( 'wp_simple_chat_options' );
-    }
+	if ( empty( $SIMPLE_CHAT_OPTIONS ) ) {
+		$SIMPLE_CHAT_OPTIONS = get_option( 'wp_simple_chat_options' );
+	}
 
-    unset( $SIMPLE_CHAT_OPTIONS[ $option_name ] );
+	unset( $SIMPLE_CHAT_OPTIONS[ $option_name ] );
 
-    return update_option( 'wp_simple_chat_options', $SIMPLE_CHAT_OPTIONS );
+	return update_option( 'wp_simple_chat_options', $SIMPLE_CHAT_OPTIONS );
 }
 
 /**
  * Return an option name for a simchat option
  *
  * @param string $option
+ *
  * @return string
  */
-function simchat_option_name( $option='' )
-{
-    return sprintf( 'wp_simple_chat_options[%s]', $option );
+function simchat_option_name( $option = '' ) {
+	return sprintf( 'wp_simple_chat_options[%s]', $option );
 }

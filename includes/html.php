@@ -2,9 +2,7 @@
 
 namespace SimpleChat;
 
-class HTML extends \ExtendedCore\HTML
-{
-
+class HTML extends \ExtendedCore\HTML {
 
 
 }

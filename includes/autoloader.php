@@ -1,4 +1,5 @@
 <?php
+
 namespace SimpleChat;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -8,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Autoloader {
 
-    private static $classes_map = [];
+	private static $classes_map = [];
 
 	public static function run() {
 		spl_autoload_register( [ __CLASS__, 'autoload' ] );
@@ -28,11 +29,11 @@ class Autoloader {
 
 			$is_filename = SIMPLE_CHAT_PATH . $filename . '.php';
 
-			if ( ! file_exists( $is_filename ) ){
-			    $filename = wp_normalize_path( SIMPLE_CHAT_PATH . 'includes/' . $filename . '.php' );
-            } else {
-			    $filename = $is_filename;
-            }
+			if ( ! file_exists( $is_filename ) ) {
+				$filename = wp_normalize_path( SIMPLE_CHAT_PATH . 'includes/' . $filename . '.php' );
+			} else {
+				$filename = $is_filename;
+			}
 		}
 
 		if ( is_readable( $filename ) ) {

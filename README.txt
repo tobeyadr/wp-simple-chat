@@ -3,7 +3,7 @@ Contributors: trainingbusinesspros, groundhogg
 Tags: chat, facebook, facebook chat
 Donate link: https://wpsimplechat.com
 Requires at least: 4.9
-Tested up to: 5.2
+Tested up to: 5.7
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv3
@@ -43,6 +43,10 @@ We currently do not provide any premium version of this tool, we just hope that 
 No, WP Simple Chat uses Facebook's Business Page Chat plugin which is free to use as long as you have a facebook business page.
 
 == Changelog ==
+
+= 1.1.4 =
+* TWEAKED Reformatted a bunch of code
+* FIXED Tested up to number.
 
 = 1.1.3 =
 * FIXED invalid function call.
