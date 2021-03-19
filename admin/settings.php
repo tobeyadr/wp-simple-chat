@@ -8,6 +8,7 @@ use function ExtendedCore\get_array_var;
 use function ExtendedCore\get_request_var;
 use function SimpleChat\get_simchat_option;
 use function SimpleChat\html;
+use function SimpleChat\is_groundhogg_installed;
 use function SimpleChat\simchat_option_name;
 
 class Settings extends Admin_Page {
@@ -158,7 +159,7 @@ class Settings extends Admin_Page {
 			]
 		];
 
-		if ( defined( 'GROUNDHOGG_VERSION' ) ) {
+		if ( is_groundhogg_installed() ) {
 			$settings['advanced_greeting']['settings'][] = [
 				'type'   => 'input',
 				'option' => 'groundhogg_greeting',

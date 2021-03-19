@@ -2,13 +2,14 @@
 
 namespace SimpleChat;
 
+use ExtendedCore\Browser;
 use function Groundhogg\do_replacements;
 use function Groundhogg\get_contactdata;
 
 class Chat {
 
 	/**
-	 * @var \Browser
+	 * @var Browser
 	 */
 	protected $browser;
 
@@ -35,7 +36,7 @@ class Chat {
 		/**
 		 * Groundhogg is installed.
 		 */
-		if ( defined( 'GROUNDHOGG_VERSION' ) ) {
+		if ( is_groundhogg_installed() ) {
 			add_filter( 'simple_chat/chat/greeting', [ $this, 'do_groundhogg_replacements' ], 99 );
 		}
 	}
@@ -48,7 +49,7 @@ class Chat {
 	 * @return string
 	 */
 	public function do_groundhogg_replacements( $greeting ) {
-		if ( ! function_exists( '\Groundhogg\do_replacements' ) ) {
+		if ( ! is_groundhogg_installed() ) {
 			return $greeting;
 		}
 
@@ -59,11 +60,7 @@ class Chat {
 	 * Setup the browser object
 	 */
 	public function setup_browser() {
-		if ( ! class_exists( 'Browser' ) ) {
-			include dirname( __FILE__ ) . '/core/includes/browser.php';
-		}
-
-		$this->browser = new \Browser();
+		$this->browser = new Browser();
 	}
 
 	/**
@@ -164,7 +161,7 @@ class Chat {
 		}
 
 		// Override with the Groundhogg personalized greeting
-		if ( defined( 'GROUNDHOGG_VERSION' ) && function_exists( '\Groundhogg\get_contactdata' ) && get_contactdata() ) {
+		if ( is_groundhogg_installed() && get_contactdata() ) {
 			$greeting         = get_simchat_option( 'groundhogg_greeting', $greeting );
 			$greeting_context = 'groundhogg';
 		}

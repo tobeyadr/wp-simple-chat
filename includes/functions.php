@@ -97,3 +97,12 @@ function delete_simchat_option( $option_name = '' ) {
 function simchat_option_name( $option = '' ) {
 	return sprintf( 'wp_simple_chat_options[%s]', $option );
 }
+
+/**
+ * Whether Groundhogg is installed
+ *
+ * @return bool
+ */
+function is_groundhogg_installed(){
+	return defined( 'GROUNDHOGG_VERSION' );
+}
