@@ -3,6 +3,7 @@
 namespace SimpleChat\Admin;
 
 use ExtendedCore\Admin\Admin_Page;
+use SimpleChat\Mailhawk_Connect;
 use SimpleChat\Plugin;
 use function ExtendedCore\get_array_var;
 use function ExtendedCore\get_request_var;
@@ -175,6 +176,7 @@ class Settings extends Admin_Page {
 	public function view() {
 
 		?>
+        <h2 style="font-weight: 300">A <a target="_blank" href="https://www.groundhogg.io/"><img width="125" style="vertical-align: middle;margin: 0 10px" src="<?php echo SIMPLE_CHAT_ASSETS_URL . 'groundhogg-logo.png' ?>"/></a> Product!</h2>
 		<form method="post"><?php
 
 		wp_nonce_field( 'save' );
@@ -233,7 +235,14 @@ class Settings extends Admin_Page {
 
 		submit_button();
 
-		?></form><?php
+		?></form>
+        <div class="mailhawk-connect">
+            <h3><?php _e( 'Sending email from this site?', 'wp-simple-chat' ); ?></h3>
+            <?php Mailhawk_Connect::instance()->connect_ui(); ?>
+        </div>
+        <?php
+
+
 
 	}
 
