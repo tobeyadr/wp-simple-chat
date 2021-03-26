@@ -6,10 +6,7 @@ namespace SimpleChat;
  * MailHawk Connect.
  *
  * This include this class in your plugin and follow the example implementation
- * of how to deply it to display the MailHawk connect button.
- *
- * @todo replace 'wp_simple_chat' with your plugin slug. Ex. 'groundhogg' or 'lifterlms'
- * @todo add your affiliate ID
+ * of how to deploy it to display the MailHawk connect button.
  */
 
 defined( 'ABSPATH' ) || exit;
