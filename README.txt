@@ -1,4 +1,4 @@
-=== Facebook chat for WordPress — WP Simple Chat — by Groundhogg===
+=== Live Chat for WordPress - WP Simple Chat — by Groundhogg===
 Contributors: trainingbusinesspros, groundhogg
 Tags: chat, facebook, facebook chat
 Donate link: https://wpsimplechat.com
@@ -43,6 +43,9 @@ We currently do not provide any premium version of this tool, we just hope that 
 No, WP Simple Chat uses Facebook's Business Page Chat plugin which is free to use as long as you have a facebook business page.
 
 == Changelog ==
+
+= 1.1.5 =
+* TWEAKED Removed "Facebook" from plugin display name.
 
 = 1.1.4 =
 * TWEAKED Reformatted a bunch of code
