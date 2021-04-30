@@ -4,6 +4,7 @@ namespace ExtendedCore\Admin;
 
 use function ExtendedCore\get_request_var;
 use function ExtendedCore\isset_not_empty;
+use function SimpleChat\html;
 
 /**
  * Abstract Admin Page

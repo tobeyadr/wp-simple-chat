@@ -5,7 +5,7 @@ Donate link: https://wpsimplechat.com
 Requires at least: 4.9
 Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: trunk
+Stable tag: 1.1.8
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.md
 
@@ -81,8 +81,8 @@ No, once a visitor starts the chat it opens the chat in their Facebook Messenger
 
 == Changelog ==
 
-= 1.1.6 & 1.1.7 =
-* TWEAKED Removed "Facebook" from plugin display name.
+= 1.1.6-1.1.8 =
+* TWEAKED Removed "Facebook" from plugin display name and plugin image assets.
 
 = 1.1.5 =
 * ADDED Groundhogg affiliation.

@@ -30,7 +30,7 @@ abstract class HTML {
 		$html = '';
 
 		foreach ( $_GET as $key => $value ) {
-			$html .= $this->input( [ 'type' => 'hidden', 'name' => $key, 'value' => $value ] );
+			$html .= $this->input( [ 'type' => 'hidden', 'name' => sanitize_key( $key ), 'value' => sanitize_text_field( $value ) ] );
 		}
 
 		if ( $echo ) {
