@@ -129,6 +129,8 @@ class Plugin {
 		} else {
 			new Chat();
 		}
+
+		Mailhawk_Connect::instance();
 	}
 
 	/**

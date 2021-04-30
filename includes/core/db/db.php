@@ -771,7 +771,7 @@ abstract class DB {
 		foreach ( $where as $condition ) {
 
 			if ( ! is_array( $condition ) ) {
-				// Todo?
+
 			} else if ( isset_not_empty( $condition, 'relationship' ) ) {
 
 				$clause[] = $this->build_advanced_where_statement( $condition );

@@ -30,7 +30,7 @@ function get_simchat_options() {
  * Get a simple chat option
  *
  * @param string $option_name
- * @param bool $default
+ * @param bool   $default
  *
  * @return mixed
  */
@@ -103,6 +103,22 @@ function simchat_option_name( $option = '' ) {
  *
  * @return bool
  */
-function is_groundhogg_installed(){
+function is_groundhogg_installed() {
 	return defined( 'GROUNDHOGG_VERSION' );
 }
+
+/**
+ * Add the settings link
+ *
+ * @param $links
+ *
+ * @return mixed
+ */
+function settings_link( $links ) {
+	$settings_link = '<a href="' . esc_url( admin_url( "options-general.php?page=wp-simple-chat" ) ) . '">' . __( 'Settings' ) . '</a>';
+	array_unshift( $links, $settings_link );
+
+	return $links;
+}
+
+add_filter( "plugin_action_links_" . SIMPLE_CHAT_PLUGIN_BASE, __NAMESPACE__ . '\settings_link' );
