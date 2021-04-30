@@ -81,7 +81,7 @@ No, once a visitor starts the chat it opens the chat in their Facebook Messenger
 
 == Changelog ==
 
-= 1.1.6 =
+= 1.1.6 & 1.1.7 =
 * TWEAKED Removed "Facebook" from plugin display name.
 
 = 1.1.5 =
