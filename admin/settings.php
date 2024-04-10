@@ -70,13 +70,13 @@ class Settings extends Admin_Page {
 						'field'  => [
 							'label' => __( 'Enable' )
 						],
-						'desc'   => __( 'Show the Facebook chat on your site. <a href="https://wpsimplechat.com/allow-chat-on-your-website/">Chat not appearing?</a>', 'wp-simple-chat' ),
+						'desc'   => __( 'Show the Facebook chat on your site. <a href="https://wpsimple.chat/allow-chat-on-your-website/">Chat not appearing?</a>', 'wp-simple-chat' ),
 					],
 					[
 						'type'   => 'input',
 						'option' => 'business_id',
 						'label'  => __( 'Facebook Business Id', 'wp-simple-chat' ),
-						'desc'   => __( 'Your facebook business ID. <a href="https://wpsimplechat.com/find-your-facebook-page-id/">Found in your Facebook page.</a>', 'wp-simple-chat' ),
+						'desc'   => __( 'Your facebook business ID. <a href="https://wpsimple.chat/find-your-facebook-page-id/">Found in your Facebook page.</a>', 'wp-simple-chat' ),
 					],
 					[
 						'type'   => 'input',

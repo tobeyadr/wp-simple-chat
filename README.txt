@@ -1,11 +1,11 @@
 === Live Chat for WordPress - WP Simple Chat — by Groundhogg===
 Contributors: trainingbusinesspros, groundhogg
 Tags: chat, facebook, facebook chat
-Donate link: https://wpsimplechat.com
+Donate link: https://wpsimple.chat
 Requires at least: 4.9
-Tested up to: 5.7
+Tested up to: 6.5
 Requires PHP: 5.6
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.md
 
@@ -15,7 +15,7 @@ Say hello to the easiest way to add Facebook Chat to your website.
 
 Facebook business chat for WordPress
 
-👉 [Official Site](https://wpsimplechat.com/) | 📃 [Documentation](https://wpsimplechat.com/allow-chat-on-your-website/)
+👉 [Official Site](https://wpsimple.chat/) | 📃 [Documentation](https://wpsimple.chat/allow-chat-on-your-website/)
 
 ❤️ Free service provided by [Groundhogg](https://www.groundhogg.io/) and [MailHawk!](https://mailhawk.io/)
 
@@ -80,6 +80,9 @@ No, if you enable the guest chat features in Facebook any non-logged in user wil
 No, once a visitor starts the chat it opens the chat in their Facebook Messenger, so you can continue the conversation off-site.
 
 == Changelog ==
+
+= 1.1.9 =
+* TWEAKED Changed url from wpsimplechat.com to wpsimple.chat
 
 = 1.1.6-1.1.8 =
 * TWEAKED Removed "Facebook" from plugin display name and plugin image assets.
